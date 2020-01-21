@@ -156,5 +156,16 @@ C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreap
 C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\obj\Debug\netcoreapp3.1\Clinic.Views.pdb
 C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\obj\Debug\netcoreapp3.1\Clinic.dll
 C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\obj\Debug\netcoreapp3.1\Clinic.pdb
-C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\obj\Debug\netcoreapp3.1\Clinic.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\obj\Debug\netcoreapp3.1\Razor\Views\Person\GetPersons.cshtml.g.cs
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\System.Web.Http.WebHost.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\WebActivatorEx.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\obj\Debug\netcoreapp3.1\Clinic.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Гайнутдиновы\source\repos\Clinic\Clinic\obj\Debug\netcoreapp3.1\Clinic.MvcApplicationPartsAssemblyInfo.cache

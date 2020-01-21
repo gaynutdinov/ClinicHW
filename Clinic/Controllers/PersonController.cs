@@ -25,6 +25,8 @@ namespace Clinic.Controllers
             _context = context;
         }
 
+
+        //Здесь норм
         [HttpPost]
         public async Task<ActionResult<PersonResponse>> PostPerson(PersonRequest personRequest)
         {
@@ -35,19 +37,20 @@ namespace Clinic.Controllers
             }
 
             PersonResponse personResponse = PersonLogic.MergePerson(personRequest);
-            _context.Persons.Add(personResponse);
+            _context.PersonsR.Add(personResponse);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPerson", new { id = personResponse.Id }, personResponse);
         }
 
+        //Здесь не норм
 
         // GET: api/People
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PersonResponse>>> GetPersons()
         {
            
-            return await _context.Persons.ToListAsync();
+            return await _context.PersonsR.ToListAsync();
 
 
         }
@@ -56,7 +59,7 @@ namespace Clinic.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<PersonResponse>> GetPerson(Guid id)
         {
-            var person = await _context.Persons.FindAsync(id);
+            var person = await _context.PersonsR.FindAsync(id);
 
             if (person == null)
             {
@@ -107,13 +110,13 @@ namespace Clinic.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<PersonResponse>> DeletePerson(Guid id)
         {
-            var person = await _context.Persons.FindAsync(id);
+            var person = await _context.PersonsR.FindAsync(id);
             if (person == null)
             {
                 return NotFound();
             }
 
-            _context.Persons.Remove(person);
+            _context.PersonsR.Remove(person);
             await _context.SaveChangesAsync();
 
             return person;
@@ -121,7 +124,7 @@ namespace Clinic.Controllers
 
         private bool PersonExists(Guid id)
         {
-            return _context.Persons.Any(e => e.Id == id);
+            return _context.PersonsR.Any(e => e.Id == id);
         }
     }
 }

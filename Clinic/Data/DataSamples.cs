@@ -44,9 +44,9 @@ namespace Clinic.Data
             }
 
 
-            if (!context.Persons.Any())
+            if (!context.PersonsR.Any())
             {
-                context.Persons.AddRange(
+                context.PersonsR.AddRange(
                     new PersonResponse
                     {
                         Id = System.Guid.NewGuid(),
@@ -72,5 +72,5 @@ namespace Clinic.Data
             context.SaveChanges();
         }
     }
-    
+
 }

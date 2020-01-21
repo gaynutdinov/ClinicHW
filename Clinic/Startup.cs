@@ -11,7 +11,8 @@ using Microsoft.Extensions.Hosting;
 
 using Clinic.Models;  
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.OpenApi.Models;
+//using Swashbuckle.SwaggerUi;
 
 namespace Clinic
 {
@@ -32,6 +33,18 @@ namespace Clinic
             services.AddDbContext<ClinicContext>(options => options.UseSqlServer(connection));
             
             services.AddControllersWithViews();
+
+            //Ñגאדדונ
+            services.AddMvc();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            });
+
+            services.AddControllers(mvcOtions =>
+            {
+                mvcOtions.EnableEndpointRouting = false;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +73,16 @@ namespace Clinic
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+           
+
+            //Ñגאדדונ
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+            app.UseMvc();
         }
     }
 }

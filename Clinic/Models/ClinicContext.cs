@@ -10,7 +10,7 @@ namespace Clinic.Models
 {
     public class ClinicContext : DbContext
     {
-        public DbSet<PersonResponse> Persons { get; set; }
+        public DbSet<PersonResponse> PersonsR { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employeers { get; set; }
         public DbSet<Document> Documents { get; set; }

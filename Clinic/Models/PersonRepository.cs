@@ -26,22 +26,22 @@ namespace Clinic.Models
         }
         public IEnumerable<PersonResponse> GetAll()
         {
-            return db.Persons;
+            return db.PersonsR;
         }
         public PersonResponse Get(int id)
         {
-            return db.Persons.Find(id);
+            return db.PersonsR.Find(id);
         }
         public void Create(PersonResponse item)
         {
-            db.Persons.Add(item);
+            db.PersonsR.Add(item);
         }
 
         public void Delete(int id)
         {
-            PersonResponse person = db.Persons.Find(id);
+            PersonResponse person = db.PersonsR.Find(id);
             if (person != null)
-                db.Persons.Remove(person);
+                db.PersonsR.Remove(person);
         }
         public void Save()
         {
@@ -50,7 +50,7 @@ namespace Clinic.Models
 
         public void Update(PersonResponse item)
         {
-            db.Persons.Update(item);
+            db.PersonsR.Update(item);
         }
     }
 }
