@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
+using Clinic.Response;
 
 namespace Clinic.Models
 {
     public class ClinicContext : DbContext
     {
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<PersonResponse> Persons { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employeers { get; set; }
         public DbSet<Document> Documents { get; set; }

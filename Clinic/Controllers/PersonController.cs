@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
+
+using Clinic.Request;
+using Clinic.Response;
 using Clinic.Models;
+using Clinic.Logic;
 
 namespace Clinic.Controllers
 {
@@ -20,16 +25,36 @@ namespace Clinic.Controllers
             _context = context;
         }
 
+        [HttpPost]
+        public async Task<ActionResult<PersonResponse>> PostPerson(PersonRequest personRequest)
+        {
+
+            if (personRequest.Id == null)
+            {
+                return BadRequest();
+            }
+
+            PersonResponse personResponse = PersonLogic.MergePerson(personRequest);
+            _context.Persons.Add(personResponse);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetPerson", new { id = personResponse.Id }, personResponse);
+        }
+
+
         // GET: api/People
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Person>>> GetPersons()
+        public async Task<ActionResult<IEnumerable<PersonResponse>>> GetPersons()
         {
+           
             return await _context.Persons.ToListAsync();
+
+
         }
 
         // GET: api/People/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Person>> GetPerson(Guid id)
+        public async Task<ActionResult<PersonResponse>> GetPerson(Guid id)
         {
             var person = await _context.Persons.FindAsync(id);
 
@@ -76,18 +101,11 @@ namespace Clinic.Controllers
         // POST: api/People
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public async Task<ActionResult<Person>> PostPerson(Person person)
-        {
-            _context.Persons.Add(person);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetPerson", new { id = person.Id }, person);
-        }
+        
 
         // DELETE: api/People/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Person>> DeletePerson(Guid id)
+        public async Task<ActionResult<PersonResponse>> DeletePerson(Guid id)
         {
             var person = await _context.Persons.FindAsync(id);
             if (person == null)

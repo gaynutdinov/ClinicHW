@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Clinic.Models;
+using Clinic.Response;
 
 namespace Clinic.Data
 {
@@ -46,25 +47,25 @@ namespace Clinic.Data
             if (!context.Persons.Any())
             {
                 context.Persons.AddRange(
-                    new Person
+                    new PersonResponse
                     {
                         Id = System.Guid.NewGuid(),
                         FirstName = "Иван",
                         MiddleName = "Иванов",
                         LastName = "Иванович",
-                        Age = 21,
-                        PassportId = passport.Id,
-                        Passport = passport
+                        Age = 21
+                        //PassportId = passport.Id,
+                        //Passport = passport
                     },
-                    new Person
+                    new PersonResponse
                     {
                         Id = System.Guid.NewGuid(),
                         FirstName = "Степан",
                         MiddleName = "Саврасов",
                         LastName = "Семенович",
-                        Age = 21,
-                        PassportId = passport.Id,
-                        Passport = passport
+                        Age = 21
+                        //PassportId = passport.Id,
+                        //Passport = passport
                     }
                     );
             }

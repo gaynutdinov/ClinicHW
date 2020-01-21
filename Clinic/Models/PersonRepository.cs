@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using Clinic.Response;
 
 namespace Clinic.Models
 {
-    public class PersonRepository : IRepository<Person>
+    public class PersonRepository : IRepository<PersonResponse>
     {
         //private readonly LibraryContext _context;
 
@@ -23,22 +24,22 @@ namespace Clinic.Models
 
             db = context;
         }
-        public IEnumerable<Person> GetAll()
+        public IEnumerable<PersonResponse> GetAll()
         {
             return db.Persons;
         }
-        public Person Get(int id)
+        public PersonResponse Get(int id)
         {
             return db.Persons.Find(id);
         }
-        public void Create(Person item)
+        public void Create(PersonResponse item)
         {
             db.Persons.Add(item);
         }
 
         public void Delete(int id)
         {
-            Person person = db.Persons.Find(id);
+            PersonResponse person = db.Persons.Find(id);
             if (person != null)
                 db.Persons.Remove(person);
         }
@@ -47,7 +48,7 @@ namespace Clinic.Models
             db.SaveChanges();
         }
 
-        public void Update(Person item)
+        public void Update(PersonResponse item)
         {
             db.Persons.Update(item);
         }
