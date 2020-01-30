@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 using Clinic.Response;
+using Clinic.Domain;
 
 namespace Clinic.Models
 {
@@ -17,12 +18,14 @@ namespace Clinic.Models
         public DbSet<Passport> Passports { get; set; }
         public DbSet<Phone> Phones { get; set; }
         public DbSet<Service> Services { get; set; }
-
+       
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         public ClinicContext(DbContextOptions<ClinicContext> options)
             : base(options)
         {
             Database.EnsureCreated();
         }
+        
     }
 }
